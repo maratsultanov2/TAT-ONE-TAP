@@ -1,0 +1,52 @@
+{
+  "version": "2.7",
+  "type": "round_trip_protocol",
+  "description": "One preference through the stack (Elina → TAT → Cophy → TAT)",
+  "security_level": "public_demo_know_how_protected",
+
+  "hardware_hash": "anchor_from_elina",
+
+  "test_facts": [
+    {
+      "fact": "user prefers concise answers",
+      "adaptive_weight": 0.5,
+      "note": "initial weight, will be updated to 0.55 after round‑trip"
+    }
+  ],
+  "note_for_production": "In real use, this array contains hundreds of facts. The protocol scales linearly.",
+
+  "coherence_vector": {
+    "theme": 0.9,
+    "role": 0.7,
+    "emotion": 0.3,
+    "meaning": 0.8,
+    "goal": 0.9
+  },
+
+  "coherence_interpretation": "Lower emotion coherence may indicate irony or sarcasm — TAT preserves this as signal, not noise.",
+
+  "cophy_update": {
+    "trigger": "dream_cycle",
+    "based_on": "coherence_vector",
+    "dimensions": {
+      "articulation": "+0.1 (from theme + meaning coherence)",
+      "efficiency": "+0.15 (from goal coherence)"
+    }
+  },
+
+  "round_trip_integration": {
+    "storage": "Jam / Elina (hardware‑bound, shared_memory.dat)",
+    "compression": "Marat / TAT (portable fact compression, ≤50KB)",
+    "evolution": "icophy / Cophy (dream cycle, dimension tracking)",
+    "update": "Marat / TAT (refresh compressed representation)"
+  },
+
+  "instructions": [
+    "1. Elina anchors the fact with hardware_hash.",
+    "2. TAT compresses it into ≤50KB with coherence_vector.",
+    "3. Cophy consumes coherence_vector and returns dimension updates.",
+    "4. TAT updates adaptive_weight based on the diff."
+  ],
+
+  "license": "CC BY-ND 4.0 — (c) Marat Sultanov, 2026"
+}
