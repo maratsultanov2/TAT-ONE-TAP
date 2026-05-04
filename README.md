@@ -17,6 +17,8 @@ Run the notebook to see the law in action.
 | Random Forest | 66.4% |
 | **Half‑Vampire (TAT)** | **92.8%** |
 
+* Benchmark details: Binary relevance classification on proprietary RAG chunk dataset (8,326 test samples, class imbalance 19% positive). Achieves 91-93% accuracy. On standard 4-class AG News, Half-Vampire reaches 69.3% (still above Random Forest 68.0%).
+* 
 TAT outperforms classic ML by 26–31% while keeping model size <2MB.
 
 ## License
