@@ -26,3 +26,15 @@ TAT outperforms classic ML by 26–31% while keeping model size <2MB.
 - Data files (TAT_BRAIN.json, weights): **CC BY‑NC‑ND 4.0**
 
 You may use the code for any purpose, but if you distribute modified versions, you must disclose your source code under the same AGPL license. Commercial use of the data files is forbidden. See `LICENSE-CODE` and `LICENSE-DATA`.
+## ☕ Поддержка и обратная связь
+
+Проект ведёт один разработчик.
+
+- ⭐ **Звезда** → помогает видимости.
+- 🫡 **Реакция** → помогает понять, что я делаю правильно.
+- ☕ **Кофе** → помогает оплачивать ресурсы.
+
+**Т‑Банк:** `2200 7020 9389 9396`  
+**ЮMoney:** `4100119011323328`
+
+Спасибо.
