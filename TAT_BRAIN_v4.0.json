@@ -1,135 +1,35 @@
-# TAT-BRAIN v4.0 — Mindful Memory Protocol
-
-## Overview
-Extract semantic layers from any text file, compute coherence scores, generate portable memory JSON.
-
-## Quick start (Colab / any Python)
-
-```python
-# ============================================================
-# TAT-BRAIN v4.0 - Universal Semantic Weighter
-# ============================================================
-
-import os
-import json
-import glob
-import numpy as np
-from datetime import datetime
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
-
-# 1. Model
-print("Loading embedding model...")
-donor = SentenceTransformer('all-MiniLM-L6-v2')
-
-# 2. Layer targets (multilingual)
-layer_targets = {
+{
+  "version": "4.0",
+  "type": "semantic_weights",
+  "description": "Portable memory layer for LLMs. Copy this JSON into a new chat to restore context.",
+  "size_limit_kb": 50,
+  "language": "multilingual (ru/en)",
+  "layer_targets": {
     "theme": {
-        "en": "discussion of architecture, memory management, system design",
-        "ru": "обсуждение архитектуры, управления памятью, проектирования систем"
+      "ru": "обсуждение архитектуры TAT-7, памяти для LLM, когерентности",
+      "en": "discussion of system architecture, memory management, coherence"
     },
     "role": {
-        "en": "user provides ideas, assistant helps with code and analysis",
-        "ru": "пользователь предлагает идеи, ассистент помогает с кодом и анализом"
+      "ru": "Marat предлагает идеи, ассистент помогает с кодом и анализом",
+      "en": "user proposes ideas, assistant helps with code and analysis"
     },
     "emotion": {
-        "en": "irony, fatigue, mild irritation from repetition",
-        "ru": "ирония, усталость, лёгкое раздражение от повторов"
+      "ru": "ирония, усталость, лёгкое раздражение от повторов",
+      "en": "irony, fatigue, mild irritation from repetition"
     },
     "meaning": {
-        "en": "need to preserve context, avoid starting from scratch",
-        "ru": "нужно сохранить контекст, чтобы не начинать с нуля"
+      "ru": "нужно сохранить контекст диалога, чтобы не начинать с нуля",
+      "en": "preserve dialogue context to avoid starting from scratch"
     },
     "goal": {
-        "en": "create portable memory format for AI sessions",
-        "ru": "создать портативный формат памяти для сессий ИИ"
+      "ru": "создать портативный формат памяти TAT-BRAIN.json",
+      "en": "create portable memory format for AI sessions"
     }
+  },
+  "instructions": [
+    "1. Copy this entire JSON into a new chat with any LLM.",
+    "2. The LLM will read it (≤50KB) and restore the conversation context.",
+    "3. Continue the dialogue without repeating past explanations."
+  ],
+  "license": "CC BY-ND 4.0 — you may copy and share, but not modify or use commercially without permission."
 }
-
-def detect_lang(text):
-    return 'ru' if any('а' <= c <= 'я' for c in text.lower()) else 'en'
-
-def classify_layers(text):
-    lang = detect_lang(text)
-    targets = {layer: layer_targets[layer].get(lang, layer_targets[layer]['en']) for layer in layer_targets}
-    target_embs = {layer: donor.encode(targets[layer]) for layer in targets}
-    text_emb = donor.encode(text[:3000])
-    scores = {}
-    for layer, target_emb in target_embs.items():
-        sim = cosine_similarity([text_emb], [target_emb])[0][0]
-        scores[layer] = max(0.0, min(1.0, sim))
-    return scores, lang
-
-def chunk_text(text, max_bytes=50*1024):
-    chunks = []
-    current = ""
-    for paragraph in text.split('\n'):
-        if len(current.encode('utf-8')) + len(paragraph.encode('utf-8')) < max_bytes:
-            current += paragraph + '\n'
-        else:
-            if current:
-                chunks.append(current.strip())
-            current = paragraph + '\n'
-    if current:
-        chunks.append(current.strip())
-    return chunks
-
-def process_file(file_path):
-    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
-        text = f.read()
-    if len(text) < 100:
-        return None
-    chunks = chunk_text(text)
-    results = []
-    for idx, chunk in enumerate(chunks):
-        scores, lang = classify_layers(chunk)
-        results.append({
-            "chunk_id": idx,
-            "size_bytes": len(chunk.encode('utf-8')),
-            "layers": scores,
-            "language": lang
-        })
-    return results
-
-def scan_and_weigh(root_path):
-    files = []
-    for ext in ['*.txt', '*.json', '*.md', '*.log', '*.py', '*.ipynb']:
-        files.extend(glob.glob(os.path.join(root_path, '**', ext), recursive=True))
-    files = list(set(files))
-    
-    weights = {layer: 1.0 for layer in layer_targets}
-    processed = 0
-    
-    for file_path in files[:200]:
-        try:
-            results = process_file(file_path)
-            if not results:
-                continue
-            for chunk in results:
-                for layer, score in chunk['layers'].items():
-                    delta = (score - 0.6) * 0.1
-                    weights[layer] = max(0.5, min(2.0, weights[layer] + delta))
-            processed += 1
-            if processed % 50 == 0:
-                print(f"Processed {processed} files...")
-        except:
-            continue
-    
-    total = sum(weights.values())
-    weights_norm = {k: (v / total) * 5 for k, v in weights.items()}
-    return weights_norm, processed
-
-# Usage
-if __name__ == "__main__":
-    ROOT = "/path/to/your/documents"  # Change this
-    weights, count = scan_and_weigh(ROOT)
-    print("\nFinal weights:", weights)
-    with open("TAT_BRAIN_v4.0.json", "w") as f:
-        json.dump({
-            "version": "4.0",
-            "type": "semantic_weights",
-            "weights": weights,
-            "files_processed": count,
-            "timestamp": datetime.now().isoformat()
-        }, f, indent=2)
-pip install sentence-transformers scikit-learn
