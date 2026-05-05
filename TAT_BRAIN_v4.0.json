@@ -132,3 +132,4 @@ if __name__ == "__main__":
             "files_processed": count,
             "timestamp": datetime.now().isoformat()
         }, f, indent=2)
+pip install sentence-transformers scikit-learn
