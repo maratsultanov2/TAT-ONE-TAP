@@ -1,0 +1,31 @@
+{
+  "version": "3.2",
+  "method": "TAT-7 layer detector (russian targets)",
+  "files_analyzed": 3,
+  "avg_scores": {
+    "theme": 0.729,
+    "role": 0.676,
+    "emotion": 0.673,
+    "meaning": 0.693,
+    "goal": 0.677
+  },
+  "weights": {
+    "theme": 0.207,
+    "role": 0.198,
+    "emotion": 0.197,
+    "meaning": 0.201,
+    "goal": 0.198
+  },
+  "targets": {
+    "theme": "обсуждение архитектуры TAT-7, памяти для LLM, когерентности",
+    "role": "Marat предлагает идеи, DeepSeek помогает с кодом и анализом",
+    "emotion": "ирония, усталость, лёгкое раздражение от повторов",
+    "meaning": "нужно сохранить контекст диалога, чтобы не начинать с нуля",
+    "goal": "создать портативный формат памяти TAT-BRAIN.json"
+  },
+  "instructions": [
+    "Скопируй этот JSON в новый диалог.",
+    "Прочитай поля version, weights, targets.",
+    "Не начинай диалог с нуля — продолжай с учётом сохранённых весов."
+  ]
+}
