@@ -49,3 +49,6 @@ You may use the code for any purpose, but if you distribute modified versions, y
 For commercial license or integration help: maratsultanov2@gmail.com / Telegram @Marat_Sultanow
 
 [Read more](docs/commercial.md)
+## 🧪 Demos
+- [Half-Vampire on CIFAR-10 (94.5% accuracy)](Half_Vampire_CIFAR10.ipynb)
+- [TAT-BRAIN loader (continue any dialogue)](TAT_BRAIN_loader.ipynb)
