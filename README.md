@@ -1,3 +1,6 @@
+[![License: AGPL v3](https://img.shields.io/badge/Code-AGPL%20v3-blue.svg)](LICENSE-CODE)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/Data-CC%20BY--NC--ND%204.0-lightgrey.svg)](LICENSE-DATA)
+[![CIFAR-10 Accuracy](https://img.shields.io/badge/CIFAR--10-94.5%25-brightgreen)](experiments/cifar10_half_vampire)
 # TAT-ONE-TAP - Technology Showcase
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maratsultanov2/TAT-ONE-TAP/blob/main/TAT_SNIPPETS.ipynb)
@@ -38,3 +41,11 @@ You may use the code for any purpose, but if you distribute modified versions, y
 **ЮMoney:** `4100119011323328`
 
 Спасибо.
+## Commercial use
+
+- **Code:** AGPL-3.0
+- **Weights & data:** CC BY-NC-ND 4.0 (free for non-commercial, license required for business)
+
+For commercial license or integration help: maratsultanov2@gmail.com / Telegram @Marat_Sultanow
+
+[Read more](docs/commercial.md)
