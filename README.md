@@ -79,7 +79,11 @@ For commercial license or integration help: maratsultanov2@gmail.com / Telegram 
 - [TAT-BRAIN loader (continue any dialogue)](TAT_BRAIN_loader.ipynb)
 ## 🧬 TAT-DIFF: one line per dialogue / одна строка на диалог
 - [TAT-DIFF: one-line memory update](examples/diff_demo.py)
-- 
+- ## 🧛 TAT-Secretary: браузерное расширение для DeepSeek
+
+Автоматическая память. [Установить](INSTALL.md) за 1 минуту.  
+[Исходный код](extensions/tat-secretary/)
+
 TAT-DIFF is the delta between two TAT-BRAIN states. Size — 50–70 characters (one line).
 
 - Token savings: 99.99%
