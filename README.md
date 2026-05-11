@@ -13,7 +13,8 @@ LLM reads only ~13% of context >50KB.
 ## Demo
 Run the notebook to see the law in action.
 ## Off‑line benchmark (classification)
-
+- [TAT-DIFF: one-line memory update](examples/diff_demo.py)
+- 
 | Method | Accuracy |
 |--------|----------|
 | Logistic Regression | 65.5% |
