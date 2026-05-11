@@ -3,6 +3,30 @@
 [![CIFAR-10 Accuracy](https://img.shields.io/badge/CIFAR--10-94.5%25-brightgreen)](experiments/cifar10_half_vampire)
 # TAT-ONE-TAP - Technology Showcase
 
+## 🎯 Что это и зачем
+
+**TAT-ONE-TAP** — это технология долговременной памяти для LLM (DeepSeek, GPT, Claude).
+
+**Проблема:**  
+LLM не помнят контекст между сессиями. Каждый новый диалог — с нуля.  
+Вы теряете время, деньги и терпение.
+
+**Решение:**  
+TAT-BRAIN — один JSON-файл размером ≤50 КБ.  
+Копируете в начало диалога — контекст восстанавливается за 3 секунды.
+
+**Экономия:**  
+90–95% токенов. 99.99% при ежедневном использовании (TAT-DIFF).
+
+**Главная фишка:**  
+Браузерное расширение **TAT-Secretary** — автоматическая память для DeepSeek.  
+Установил → пользуешься. Без API, без облаков.
+
+**Для кого:**  
+- Пользователи DeepSeek с длительными диалогами  
+- Разработчики, встраивающие LLM  
+- Интеграторы, которым нужна локальная память
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maratsultanov2/TAT-ONE-TAP/blob/main/TAT_SNIPPETS.ipynb)
 
 **Author:** Marat Sultanov
