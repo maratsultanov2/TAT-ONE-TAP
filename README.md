@@ -13,7 +13,7 @@ LLM reads only ~13% of context >50KB.
 ## Demo
 Run the notebook to see the law in action.
 ## Off‑line benchmark (classification)
-- [TAT-DIFF: one-line memory update](examples/diff_demo.py)
+
 - 
 | Method | Accuracy |
 |--------|----------|
@@ -54,7 +54,8 @@ For commercial license or integration help: maratsultanov2@gmail.com / Telegram 
 - [Half-Vampire on CIFAR-10 (94.5% accuracy)](Half_Vampire_CIFAR10.ipynb)
 - [TAT-BRAIN loader (continue any dialogue)](TAT_BRAIN_loader.ipynb)
 ## 🧬 TAT-DIFF: one line per dialogue / одна строка на диалог
-
+- [TAT-DIFF: one-line memory update](examples/diff_demo.py)
+- 
 TAT-DIFF is the delta between two TAT-BRAIN states. Size — 50–70 characters (one line).
 
 - Token savings: 99.99%
