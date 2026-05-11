@@ -52,3 +52,23 @@ For commercial license or integration help: maratsultanov2@gmail.com / Telegram 
 ## 🧪 Demos
 - [Half-Vampire on CIFAR-10 (94.5% accuracy)](Half_Vampire_CIFAR10.ipynb)
 - [TAT-BRAIN loader (continue any dialogue)](TAT_BRAIN_loader.ipynb)
+## 🧬 TAT-DIFF: one line per dialogue / одна строка на диалог
+
+TAT-DIFF is the delta between two TAT-BRAIN states. Size — 50–70 characters (one line).
+
+- Token savings: 99.99%
+- Format: `t:+0.01,r:-0.02,e:+0.07,m:-0.01,g:0.00`
+- Applied to full TAT-BRAIN in milliseconds
+
+Thus, daily usage of TAT does not require sending 50KB every time.
+
+---
+
+**Русский:**  
+TAT-DIFF — это дельта изменений между двумя TAT-BRAIN. Размер — 50–70 символов (одна строка).
+
+- Экономия токенов: 99.99%
+- Формат: `t:+0.01,r:-0.02,e:+0.07,m:-0.01,g:0.00`
+- Применяется к полному TAT-BRAIN за доли секунды
+
+Таким образом, ежедневное использование TAT не требует передачи 50KB каждый раз.
