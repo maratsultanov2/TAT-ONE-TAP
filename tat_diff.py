@@ -2,12 +2,22 @@
 TAT-DIFF: Differential memory for TAT-BRAIN
 Одна строка — один диалог. 5 слоёв, 5 значений.
 Экономия токенов: до 99.99% по сравнению с сохранением полного состояния.
+Версия 2.0 — зеркальная маркировка и слеш-переход.
 """
 
 import hashlib
-from typing import Dict
+from datetime import datetime
+from typing import Dict, Optional
 
 LAYERS = ["theme", "role", "emotion", "meaning", "goal"]
+
+def mirror_timestamp(dt: Optional[datetime] = None) -> str:
+    """Зеркальная временная метка: DD.MM.YYYY / YYYY.MM.DD"""
+    if dt is None:
+        dt = datetime.now()
+    left = dt.strftime("%d.%m.%Y")
+    right = dt.strftime("%Y.%m.%d")
+    return f"{left} / {right}"
 
 def weights_to_string(weights: Dict[str, float]) -> str:
     parts = [f"{layer[0]}:{weights[layer]:.2f}" for layer in LAYERS]
@@ -54,3 +64,31 @@ def apply_diff(base_weights: Dict[str, float], diff_str: str) -> Dict[str, float
 def hash_weights(weights: Dict[str, float]) -> str:
     s = weights_to_string(weights)
     return hashlib.sha256(s.encode()).hexdigest()[:8]
+
+def pack_with_mirror(prev_weights: Dict[str, float], new_weights: Dict[str, float], dt: Optional[datetime] = None) -> str:
+    """Упаковывает DIFF с зеркальной меткой и слеш-переходом."""
+    diff = compute_diff(prev_weights, new_weights)
+    ts = mirror_timestamp(dt)
+    return f"{ts} | {diff}"
+
+def unpack_mirror(packed: str) -> Dict[str, str]:
+    """Извлекает метку и DIFF из упакованной строки."""
+    # Формат: "DD.MM.YYYY / YYYY.MM.DD | t:+0.01,..."
+    parts = packed.split(" | ", 1)
+    if len(parts) != 2:
+        return {"error": "Invalid format"}
+    return {"timestamp": parts[0], "diff": parts[1]}
+
+def restore_chain_from_mirror(mirror_lines: list, base_weights: Dict[str, float], last_valid_idx: int) -> Dict[str, float]:
+    """Восстанавливает цепочку от последнего валидного слеш-перехода."""
+    current = base_weights.copy()
+    for line in mirror_lines[last_valid_idx:]:
+        info = unpack_mirror(line)
+        if "error" in info:
+            continue
+        # Используем правую часть метки (машинную) для проверки целостности
+        ts_parts = info["timestamp"].split(" / ")
+        if len(ts_parts) == 2:
+            # Можно добавить проверку хеша, но пока достаточно структуры
+            current = apply_diff(current, info["diff"])
+    return current
