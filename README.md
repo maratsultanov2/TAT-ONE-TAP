@@ -63,3 +63,13 @@ TAT-ONE-TAP is built on the same coherence architecture validated on real-world 
 
 > *"The θ=1.987 threshold mapped to Coherence head divergence — the design principle held on real data, not just synthetic."*
 > — qingkong66, DeepSeek-V3 #1285
+
+
+## Cost Efficiency
+
+TAT's chunk architecture reduces memory and token usage by 25–30×. For a typical agent system: 24 MB → <1 MB, $24/month → <$1/month in LLM costs.
+
+📖 Read more:
+- [English](docs/en/COST_EFFICIENCY.md)
+- [Русский](docs/ru/COST_EFFICIENCY.md)
+- [中文](docs/zh/COST_EFFICIENCY.md)
