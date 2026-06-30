@@ -1,75 +1,25 @@
-# TAT-ONE-TAP
+# TAT-ONE-TAP — Memory for LLM
 
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maratsultanov2/TAT-ONE-TAP/blob/main/demo.ipynb)
+[![License: AGPL v3](https://img.shields.io/badge/Code-AGPL%20v3-blue.svg)](LICENSE-CODE)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/Data-CC%20BY--NC--ND%204.0-lightgrey.svg)](LICENSE-DATA)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://python.org)
+[![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen)]()
+[![Compression: 645x](https://img.shields.io/badge/Compression-645x-orange)]()
 
+One-tap memory for LLM. TAT-BRAIN + TAT-DIFF + TAT-Secretary extension for DeepSeek.
 
+## Quick Links
 
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maratsultanov2/TAT-ONE-TAP/blob/main/demo.ipynb)
+- [Cost Efficiency](docs/en/COST_EFFICIENCY.md)
+- [TAT-DIFF](tat_diff.py)
+- [TAT-Secretary Extension](extensions/tat-secretary/)
+- [Installation Guide](INSTALL.md)
 
+## Ecosystem
 
-
-## Memory Management for LLMs
-
-TAT-ONE-TAP is a modular memory system for LLMs (DeepSeek, GPT, Claude).
-
-## Modules
-
-| Module | Description |
-|---|---|
-| **TAT-BRAIN** | Persona/context snapshot (≤50 KB) |
-| **TAT-INDEX** | Searchable index of all dialogues |
-| **TAT-DIFF** | State delta (99.99% token savings) |
-| **TAT-PRIORITY** | Importance-based memory management |
-| **TAT-ACHIEVEMENTS** | History of progress and milestones |
-
-## Installation
-
-```bash
-git clone https://github.com/maratsultanov2/TAT-ONE-TAP.git
-cd TAT-ONE-TAP
-pip install -r requirements.txt
-```
-
-## Quick Start
-
-```python
-from src.tat_memory import TATMemory
-
-memory = TATMemory()
-memory.save_session({'id': 'session_1', 'topics': 'TAT'})
-brain = memory.restore()
-print(brain)
-```
-
-## License
-
-- Code: AGPL-3.0
-- Data: CC BY-NC-ND 4.0
-
-## Author
-
-Marat Sultanov
-
-
-## Validation
-
-TAT-ONE-TAP is built on the same coherence architecture validated on real-world data. See [docs/VALIDATION.md](docs/VALIDATION.md) for details.
-
-> *"The θ=1.987 threshold mapped to Coherence head divergence — the design principle held on real data, not just synthetic."*
-> — qingkong66, DeepSeek-V3 #1285
-
-
-## Cost Efficiency
-
-TAT's chunk architecture reduces memory and token usage by 25–30×. For a typical agent system: 24 MB → <1 MB, $24/month → <$1/month in LLM costs.
-
-📖 Read more:
-- [English](docs/en/COST_EFFICIENCY.md)
-- [Русский](docs/ru/COST_EFFICIENCY.md)
-- [中文](docs/zh/COST_EFFICIENCY.md)
+| Repository | Purpose |
+|------------|---------|
+| [TAT-ROOT](https://github.com/maratsultanov2/TAT-ROOT) | Architecture, theory, benchmarks |
+| [TAT-ONE-TAP](https://github.com/maratsultanov2/TAT-ONE-TAP) | Memory for LLM, TAT-DIFF, TAT-Secretary |
+| [TAT-DEMO](https://github.com/maratsultanov2/TAT-DEMO) | Visualization, Colab demos |
+| [TAT7-logistics](https://github.com/maratsultanov2/TAT7-logistics) | Industrial prototype for warehouse |
