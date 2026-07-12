@@ -23,3 +23,9 @@ One-tap memory for LLM. TAT-BRAIN + TAT-DIFF + TAT-Secretary extension for DeepS
 | [TAT-ONE-TAP](https://github.com/maratsultanov2/TAT-ONE-TAP) | Memory for LLM, TAT-DIFF, TAT-Secretary |
 | [TAT-DEMO](https://github.com/maratsultanov2/TAT-DEMO) | Visualization, Colab demos |
 | [TAT7-logistics](https://github.com/maratsultanov2/TAT7-logistics) | Industrial prototype for warehouse |
+
+## TAT‑Monitor — Structural Anomaly Detector
+[![TAT](https://img.shields.io/badge/TAT-Monitor-blue)](tat_monitor/README.md)
+[![Status: Peer‑Reviewed](https://img.shields.io/badge/Status-Peer--Reviewed-brightgreen)](https://github.com/DanceNitra/agora)
+[![License: AGPL v3](https://img.shields.io/badge/Code-AGPL%20v3-blue)](LICENSE-CODE)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/Data-CC%20BY--NC--ND%204.0-lightgrey)](LICENSE-DATA)
