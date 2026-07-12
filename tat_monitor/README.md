@@ -94,3 +94,10 @@ monitor = TATMonitor()
 © Marat Sultanov, 2026. All rights reserved.
 
 *Published: 2026-07-12 11:41*
+## Testing
+Run unit tests:
+```bash
+cd tat_monitor
+python -m unittest test_tat_monitor.py
+```
+Tests cover all four complexity levels (v1–v4), provenance mode, and embeddings‑free mode.
