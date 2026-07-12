@@ -5,6 +5,8 @@ Unit-тесты для TAT-Monitor.
 import unittest
 import sys
 import os
+
+# Добавляем путь к модулю — работает и локально, и при импорте из репозитория
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tat_monitor import TATMonitor
 
@@ -136,7 +138,6 @@ class TestTATMonitor(unittest.TestCase):
         }
         result = self.monitor.predict(record)
         self.assertIn(result['verdict'], ['revert', 'keep'])
-        # С provenance должен сработать provenance-уровень
         self.assertIn('provenance', result['level'])
 
     def test_no_embeddings_mode(self):
