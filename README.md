@@ -29,3 +29,40 @@
 ---
 
 © 2026 Marat Sultanov
+
+
+## Installation
+
+You can install TAT-ONE-TAP as a package:
+```bash
+pip install git+https://github.com/maratsultanov2/TAT-ONE-TAP.git
+```
+For development:
+```bash
+git clone https://github.com/maratsultanov2/TAT-ONE-TAP.git
+cd TAT-ONE-TAP
+pip install -e .
+```
+
+## Quick Start
+
+```python
+from tat import TAT
+
+# For structural anomaly detection
+tat_defense = TAT(mode='defense')
+anomalies = tat_defense.detect_anomaly(data, window=10, block_sizes=[6,7,7])
+
+# For revert detection in dialogues
+tat_monitor = TAT(mode='monitor')
+result = tat_monitor.detect_anomaly(context, candidate)
+```
+
+## Contact & Support
+
+For commercial licensing, support, or partnership inquiries:
+- Email: marat.sultanov@example.com
+- Telegram: @maratsultanov2
+- GitHub Issues: [create an issue](https://github.com/maratsultanov2/TAT-ONE-TAP/issues)
+
+We aim to respond to commercial inquiries within 24 hours.
