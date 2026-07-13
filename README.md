@@ -1,31 +1,27 @@
-# TAT-ONE-TAP — Memory for LLM
+# TAT-ONE-TAP
 
-[![License: AGPL v3](https://img.shields.io/badge/Code-AGPL%20v3-blue.svg)](LICENSE-CODE)
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/Data-CC%20BY--NC--ND%204.0-lightgrey.svg)](LICENSE-DATA)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://python.org)
-[![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen)]()
-[![Compression: 645x](https://img.shields.io/badge/Compression-645x-orange)]()
+**One‑tap memory for LLM** — экосистема модулей для управления памятью, структурного анализа и защиты в агентных системах.
 
-One-tap memory for LLM. TAT-BRAIN + TAT-DIFF + TAT-Secretary extension for DeepSeek.
+## 🧩 Модули
 
-## Quick Links
+| Модуль | Назначение | Расположение |
+|--------|------------|--------------|
+| **TAT-D (Defense)** | Обнаружение структурных аномалий без обучения, 0 МБ RAM, работает на CPU | [`tat_defense/`](tat_defense/) |
+| **TAT-Monitor** | Детекция ревертов в диалогах (роль → якорь → старое значение). F1 0.926, AUROC 0.986 | [`tat_monitor/`](tat_monitor/) |
+| **TAT-Diff** | Вычисление разницы между состояниями памяти | [`tat_diff.py`](tat_diff.py) |
+| **TAT-Secretary** | Расширение для браузера, интеграция с DeepSeek | [`extensions/tat-secretary/`](extensions/tat-secretary/) |
+| **TAT-Snippets** | Готовые сниппеты для Colab | [`TAT_SNIPPETS.ipynb`](TAT_SNIPPETS.ipynb) |
+| **TAT-ONE-TAP Core** | Ядро управления памятью для LLM | [`core/`](core/) (в разработке) |
 
-- [Cost Efficiency](docs/en/COST_EFFICIENCY.md)
-- [TAT-DIFF](tat_diff.py)
-- [TAT-Secretary Extension](extensions/tat-secretary/)
-- [Installation Guide](INSTALL.md)
+## 📖 Документация
 
-## Ecosystem
+- [TAT-D](tat_defense/README.md) – на русском, английском, китайском
+- [TAT-Monitor](tat_monitor/README.md) – документация по мониторингу
 
-| Repository | Purpose |
-|------------|---------|
-| [TAT-ROOT](https://github.com/maratsultanov2/TAT-ROOT) | Architecture, theory, benchmarks |
-| [TAT-ONE-TAP](https://github.com/maratsultanov2/TAT-ONE-TAP) | Memory for LLM, TAT-DIFF, TAT-Secretary |
-| [TAT-DEMO](https://github.com/maratsultanov2/TAT-DEMO) | Visualization, Colab demos |
-| [TAT7-logistics](https://github.com/maratsultanov2/TAT7-logistics) | Industrial prototype for warehouse |
+## 🔒 Лицензия
 
-## TAT‑Monitor — Structural Anomaly Detector
-[![TAT](https://img.shields.io/badge/TAT-Monitor-blue)](tat_monitor/README.md)
-[![Status: Peer‑Reviewed](https://img.shields.io/badge/Status-Peer--Reviewed-brightgreen)](https://github.com/DanceNitra/agora)
-[![License: AGPL v3](https://img.shields.io/badge/Code-AGPL%20v3-blue)](LICENSE-CODE)
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/Data-CC%20BY--NC--ND%204.0-lightgrey)](LICENSE-DATA)
+**Проприетарная** – коммерческое использование только по лицензии. Подробнее в [LICENSE](LICENSE).
+
+---
+
+© 2026 Marat Sultanov
