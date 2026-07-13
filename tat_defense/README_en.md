@@ -1,7 +1,7 @@
 # TAT-D: Structural Anomaly Detection
 
-TAT-D detects structural anomalies without training.
+TAT-D detects structural anomalies without training, runs on CPU, and uses 0 MB RAM.
 
-[Demo notebook](examples/tat_d_demo.ipynb)
+[Demo Notebook](demo.ipynb)
 
 License: Proprietary
