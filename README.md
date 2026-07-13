@@ -1,26 +1,30 @@
 # TAT-ONE-TAP
 
-**One‑tap memory for LLM** — экосистема модулей для управления памятью, структурного анализа и защиты в агентных системах.
+[![English](https://img.shields.io/badge/English-blue)](README.md)
+[![Русский](https://img.shields.io/badge/Русский-green)](README.ru.md)
+[![中文](https://img.shields.io/badge/中文-red)](README.zh.md)
 
-## 🧩 Модули
+**One‑tap memory for LLM** — ecosystem of modules for memory management, structural analysis, and protection in agentic systems.
 
-| Модуль | Назначение | Расположение |
-|--------|------------|--------------|
-| **TAT-D (Defense)** | Обнаружение структурных аномалий без обучения, 0 МБ RAM, работает на CPU | [`tat_defense/`](tat_defense/) |
-| **TAT-Monitor** | Детекция ревертов в диалогах (роль → якорь → старое значение). F1 0.926, AUROC 0.986 | [`tat_monitor/`](tat_monitor/) |
-| **TAT-Diff** | Вычисление разницы между состояниями памяти | [`tat_diff.py`](tat_diff.py) |
-| **TAT-Secretary** | Расширение для браузера, интеграция с DeepSeek | [`extensions/tat-secretary/`](extensions/tat-secretary/) |
-| **TAT-Snippets** | Готовые сниппеты для Colab | [`TAT_SNIPPETS.ipynb`](TAT_SNIPPETS.ipynb) |
-| **TAT-ONE-TAP Core** | Ядро управления памятью для LLM | [`core/`](core/) (в разработке) |
+## 🧩 Modules
 
-## 📖 Документация
+| Module | Purpose | Location |
+|--------|---------|----------|
+| **TAT-D (Defense)** | Structural anomaly detection without training, 0 MB RAM, runs on CPU | [`tat_defense/`](tat_defense/) |
+| **TAT-Monitor** | Revert detection in dialogues (role → anchor → old value). F1 0.926, AUROC 0.986 | [`tat_monitor/`](tat_monitor/) |
+| **TAT-Diff** | Compute difference between memory states | [`tat_diff.py`](tat_diff.py) |
+| **TAT-Secretary** | Browser extension, DeepSeek integration | [`extensions/tat-secretary/`](extensions/tat-secretary/) |
+| **TAT-Snippets** | Ready‑to‑use Colab snippets | [`TAT_SNIPPETS.ipynb`](TAT_SNIPPETS.ipynb) |
+| **TAT-ONE-TAP Core** | Core memory management for LLM | [`core/`](core/) (in development) |
 
-- [TAT-D](tat_defense/README.md) – на русском, английском, китайском
-- [TAT-Monitor](tat_monitor/README.md) – документация по мониторингу
+## 📖 Documentation
 
-## 🔒 Лицензия
+- [TAT-D](tat_defense/README.md) – EN / RU / ZH
+- [TAT-Monitor](tat_monitor/README.md) – monitoring documentation
 
-**Проприетарная** – коммерческое использование только по лицензии. Подробнее в [LICENSE](LICENSE).
+## 🔒 License
+
+**Proprietary** – commercial use only under license. See [LICENSE](LICENSE) for details.
 
 ---
 
