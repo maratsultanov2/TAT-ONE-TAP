@@ -61,8 +61,8 @@ result = tat_monitor.detect_anomaly(context, candidate)
 ## Contact & Support
 
 For commercial licensing, support, or partnership inquiries:
-- Email: marat.sultanov@example.com
-- Telegram: @maratsultanov2
+- Email: maratsultanov2@gmail.com
+- Telegram: @Marat_Sultanow
 - GitHub Issues: [create an issue](https://github.com/maratsultanov2/TAT-ONE-TAP/issues)
 
 We aim to respond to commercial inquiries within 24 hours.
